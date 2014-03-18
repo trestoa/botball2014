@@ -13,19 +13,16 @@ public class Elevator {
 	}
 	
 	public void up() {
-		System.out.println("up");
 		top.run(-80);
 		bottom.run(10);
 	}
 	
 	public void stop() {
-		System.out.println("stop");
 		top.off();
 		bottom.off();
 	}
 	
 	public void down() {
-		System.out.println("down");
 		top.run(5);
 		bottom.run(-60);
 	}
