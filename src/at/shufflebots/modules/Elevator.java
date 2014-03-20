@@ -13,8 +13,8 @@ public class Elevator {
 	}
 	
 	public void up() {
-		top.run(-80);
-		bottom.run(10);
+		top.run(-100);
+		bottom.run(7);
 	}
 	
 	public void stop() {
@@ -23,7 +23,7 @@ public class Elevator {
 	}
 	
 	public void down() {
-		top.run(5);
-		bottom.run(-60);
+		top.run(7);
+		bottom.run(-100);
 	}
 }
