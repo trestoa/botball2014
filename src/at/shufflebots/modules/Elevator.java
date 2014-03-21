@@ -39,7 +39,7 @@ public class Elevator {
 			return;
 		top.run(-100);
 		bottom.run(7);
-		Botball.msleep(1000);
+		Botball.msleep(1200);
 		top.off();
 		bottom.off();
 	}
@@ -49,7 +49,7 @@ public class Elevator {
 			return;
 		top.run(7);
 		bottom.run(-100);
-		Botball.msleep(1000);
+		Botball.msleep(900);
 		top.off();
 		bottom.off();
 	}
