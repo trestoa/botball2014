@@ -29,9 +29,9 @@ public class ElevatorTest {
 			if(c.isPressed())
 				lift.down();
 			if(x.isPressed())
-				lift.short_up();
+				lift.shortup();
 			if(z.isPressed())
-				lift.short_down();
+				lift.shortdown();
 			Botball.msleep(100);
 		}
 	}

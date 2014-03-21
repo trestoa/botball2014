@@ -34,7 +34,7 @@ public class Elevator {
 		bottom.off();
 	}
 	
-	public void short_up() {
+	public void shortup() {
 		if(topSensor.getValue())
 			return;
 		top.run(-100);
@@ -44,7 +44,7 @@ public class Elevator {
 		bottom.off();
 	}
 	
-	public void short_down() {
+	public void shortdown() {
 		if(bottomSensor.getValue())
 			return;
 		top.run(7);
