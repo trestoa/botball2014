@@ -2,6 +2,7 @@ package at.shufflebots.programs;
 
 import linkjvm.Botball;
 import linkjvm.create.Create;
+import at.shufflebots.modules.CheckList;
 import at.shufflebots.modules.Elevator;
 import at.shufflebots.modules.ElevatorArm;
 import at.shufflebots.modules.ShufflerArm;
@@ -9,7 +10,13 @@ import at.shufflebots.modules.ShufflerArm;
 public class ShufflerMain {
 
 	public static void main(String[] args) {
-
+		
+		new CheckList<>("Create up",
+						"Shuffler-Arm| 3", 
+						"Elev-Motor  | top: 1, bottom: 0", 
+						"Elev-Sensor | top: 8, bottom: 0", 
+						"Arm| left: 0, right: 1").performChecks();
+		
 		//Expect shuffler is standing in the right position in front of the hanger rack
 		
 		final ShufflerArm arm = new ShufflerArm(3);
