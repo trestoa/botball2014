@@ -23,22 +23,26 @@ public class ShufflerArm {
 	
 	public void toLeft() {
 		motor.run(50);
-		Botball.msleep(2600);
+		Botball.msleep(2400);
 		motor.off();
 		POSITON = -1;
 	}
 	
 	public void toMiddle() {
 		motor.run(POSITON * 50);
-		Botball.msleep(1300);
+		Botball.msleep(1100);
 		motor.off();
 		POSITON = 0;
 	}
 	
 	public void toRight() {
 		motor.run(-50);
-		Botball.msleep(2600);
+		Botball.msleep(2400);
 		motor.off();
 		POSITON = 1;
+	}
+	
+	public void stopAll(){
+		motor.off();
 	}
 }

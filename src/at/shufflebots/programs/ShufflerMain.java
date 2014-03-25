@@ -1,7 +1,9 @@
 package at.shufflebots.programs;
 
+import linkjvm.Botball;
 import linkjvm.create.Create;
 import at.shufflebots.modules.Elevator;
+import at.shufflebots.modules.ElevatorArm;
 import at.shufflebots.modules.ShufflerArm;
 
 public class ShufflerMain {
@@ -9,20 +11,63 @@ public class ShufflerMain {
 	public static void main(String[] args) {
 
 		//Expect shuffler is standing in the right position in front of the hanger rack
-
-		ShufflerArm arm = new ShufflerArm(3);
-		Elevator elevator = new Elevator(1, 0, 8, 9);
-		Create create = new Create();
 		
+		final ShufflerArm arm = new ShufflerArm(3);
+		//motor 3
+		final Elevator elevator = new Elevator(1, 0, 8, 9);  
+		//motor oben 1, motor unten 0, sensor oben 8, sensor unten 9 
+		final Create create = new Create();
+		final ElevatorArm elevatorArm = new ElevatorArm(0, 1); 
+		//servo links 0, servo rechts 1
+		elevatorArm.enable();
+		
+		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				elevatorArm.stopAll();
+				elevator.stopAll();
+				create.stop();
+				arm.stopAll();
+			}
+		}));
+		
+		create.connect();
+		
+		System.out.println("down");
+		elevator.down();
+		
+		System.out.println("left");
 		arm.toLeft();
+		System.out.println("shortup");
 		elevator.shortup();
-		create.move(35000, -80);
+		System.out.println("back");
+		create.driveDirect(100, 100);
+		Botball.msleep(2000);
+		create.stop();
 		
+		System.out.println("elevator up");
 		elevator.up();
-		create.move(35000, 80);
+		System.out.println("move forward");
+		create.driveDirect(-100, -100);
+		Botball.msleep(2100);
+		create.stop();
+
+		System.out.println("shortdown");
 		elevator.shortdown();
-		arm.toMiddle();
+		System.out.println("right");
+		arm.toRight();
 		
-		create.move(35000, -80);
+		System.out.println("back");
+		create.driveDirect(100, 100);
+		Botball.msleep(2000);
+		create.stop();
+		
+		System.out.println("down");
+		elevator.down();
+		System.out.println("middle");
+		arm.toMiddle();
+
+		create.disconnect();
 	}
 }

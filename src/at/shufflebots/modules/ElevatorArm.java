@@ -30,4 +30,16 @@ public class ElevatorArm {
 		left.disable();
 		right.disable();
 	}
+	
+	public void enable(){
+		left.setPosition(1500);
+		right.setPosition(500);
+		left.enable();
+		right.enable();
+	}
+	
+	public void stopAll(){
+		left.disable();
+		right.disable();
+	}
 }
