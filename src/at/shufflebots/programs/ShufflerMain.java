@@ -14,8 +14,9 @@ public class ShufflerMain {
 		new CheckList<>("Create up",
 						"Shuffler-Arm| 3", 
 						"Elev-Motor  | top: 1, bottom: 0", 
-						"Elev-Sensor | top: 8, bottom: 0", 
-						"Arm| left: 0, right: 1").performChecks();
+						"Elev-Sensor | top: 8, bottom: 9", 
+						"Elev-Arm    | left: 1, right: 3",
+						"V-Arm       | left: 0, right: 2").performChecks();
 		
 		//Expect shuffler is standing in the right position in front of the hanger rack
 		
@@ -24,7 +25,7 @@ public class ShufflerMain {
 		final Elevator elevator = new Elevator(1, 0, 8, 9);  
 		//motor oben 1, motor unten 0, sensor oben 8, sensor unten 9 
 		final Create create = new Create();
-		final ElevatorArm elevatorArm = new ElevatorArm(0, 1); 
+		final ElevatorArm elevatorArm = new ElevatorArm(1, 3); 
 		//servo links 0, servo rechts 1
 		elevatorArm.enable();
 		
