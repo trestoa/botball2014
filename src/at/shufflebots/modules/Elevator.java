@@ -34,22 +34,22 @@ public class Elevator {
 		bottom.off();
 	}
 	
-	public void short_up() {
+	public void shortup() {
 		if(topSensor.getValue())
 			return;
 		top.run(-100);
 		bottom.run(7);
-		Botball.msleep(1000);
+		Botball.msleep(1200);
 		top.off();
 		bottom.off();
 	}
 	
-	public void short_down() {
+	public void shortdown() {
 		if(bottomSensor.getValue())
 			return;
 		top.run(7);
 		bottom.run(-100);
-		Botball.msleep(1000);
+		Botball.msleep(900);
 		top.off();
 		bottom.off();
 	}

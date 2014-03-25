@@ -17,25 +17,25 @@ public class ShufflerArm {
 	
 	public ShufflerArm(int motor_port) {
 		motor = new Motor(motor_port);
-		this.to_Right();
-		this.to_Middle();
+		this.toRight();
+		this.toMiddle();
 	}
 	
-	public void to_Right() {
+	public void toLeft() {
 		motor.run(50);
 		Botball.msleep(2600);
 		motor.off();
 		POSITON = -1;
 	}
 	
-	public void to_Middle() {
+	public void toMiddle() {
 		motor.run(POSITON * 50);
 		Botball.msleep(1300);
 		motor.off();
 		POSITON = 0;
 	}
 	
-	public void to_Left() {
+	public void toRight() {
 		motor.run(-50);
 		Botball.msleep(2600);
 		motor.off();

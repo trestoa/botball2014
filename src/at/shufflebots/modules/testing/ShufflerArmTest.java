@@ -20,11 +20,11 @@ public class ShufflerArmTest {
 		ShufflerArm sarm = new ShufflerArm(3);
 		while(!sb.isPressed()) {
 			if(a.isPressed())
-				sarm.to_Left();
+				sarm.toLeft();
 			if(b.isPressed())
-				sarm.to_Middle();
+				sarm.toMiddle();
 			if(c.isPressed())
-				sarm.to_Right();
+				sarm.toRight();
 			Botball.msleep(100);
 		}
 	}
