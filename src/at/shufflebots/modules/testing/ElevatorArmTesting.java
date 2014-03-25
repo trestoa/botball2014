@@ -9,6 +9,7 @@ import linkjvm.sensors.buttons.SideButton;
 public class ElevatorArmTesting {
 
 	public static void main(String[] args) {
+		Botball.waitForLight(0);
 		AButton a = new AButton();
 		a.setText("Up");
 		CButton c = new CButton();
