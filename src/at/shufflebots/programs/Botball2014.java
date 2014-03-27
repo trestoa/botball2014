@@ -36,15 +36,15 @@ public class Botball2014 {
 		create.driveDirect(-100, -100);
 		Botball.msleep(5000);
 		create.driveDirect(200, 200);
-		Botball.msleep(5570);
-		create.turn(-85, 50);
+		Botball.msleep(5590);
+		create.turn(-82, 50);
 		create.driveDirect(-130, -130);
 		Botball.msleep(5000);
 		create.stop();
 		arm.up();
 		elev.up();
 		create.driveDirect(100, 100);
-		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
+		while(create.getRightFrontCliff() > 500 || create.getRightCliff() > 500) Botball.msleep(20);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		create.stop();
 	}
