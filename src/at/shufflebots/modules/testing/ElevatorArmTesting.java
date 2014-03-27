@@ -15,7 +15,7 @@ public class ElevatorArmTesting {
 		CButton c = new CButton();
 		c.setText("Down");
 		SideButton sb = new SideButton();
-		ElevatorArm arm = new ElevatorArm(2, 3);
+		ElevatorArm arm = new ElevatorArm(2, 3,0 , 0);
 		while(!sb.isPressed()) {
 			if(a.isPressed())
 				arm.up();

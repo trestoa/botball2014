@@ -22,7 +22,7 @@ public class ElevatorTest {
 		ZButton z = new ZButton();
 		z.setText("Short Down");
 		SideButton sb = new SideButton();
-		Elevator lift = new Elevator(1, 0, 8, 9);
+		Elevator lift = new Elevator(0, 1, 8, 9);
 		while(!sb.isPressed()) {
 			if(a.isPressed())
 				lift.up();

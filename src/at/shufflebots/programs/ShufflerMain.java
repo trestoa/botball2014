@@ -25,15 +25,14 @@ public class ShufflerMain {
 		final Elevator elevator = new Elevator(1, 0, 8, 9);  
 		//motor oben 1, motor unten 0, sensor oben 8, sensor unten 9 
 		final Create create = new Create();
-		final ElevatorArm elevatorArm = new ElevatorArm(1, 3); 
+		final ElevatorArm elevatorArm = new ElevatorArm(1, 3, 0, 0); 
 		//servo links 0, servo rechts 1
-		elevatorArm.enable();
 		
 		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 			
 			@Override
 			public void run() {
-				elevatorArm.stopAll();
+				//elevatorArm.stopAll();
 				elevator.stopAll();
 				create.stop();
 				arm.stopAll();
