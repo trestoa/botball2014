@@ -1,37 +1,37 @@
 package at.shufflebots.modules;
 
 import linkjvm.Botball;
-import linkjvm.low.Servo;
+import linkjvm.motors.Servo;
 
 public class VArms {
 	private Servo rightServo, leftServo;
 	
 	public VArms(){
-		rightServo = new Servo(0);
-		leftServo = new Servo(1);
+		rightServo = new Servo(2);
+		leftServo = new Servo(0);
 	}
 	
 	public void close(){
+		rightServo.setPosition(2047);
 		rightServo.enable();
-		rightServo.setPosition(350);
-		Botball.msleep(500);
-		rightServo.disable();
 		
-		leftServo.enable();
 		leftServo.setPosition(350);
-		Botball.msleep(500);
+		leftServo.enable();
+		Botball.msleep(1500);
+		
+		rightServo.disable();
 		leftServo.disable();
 	}
 	
 	public void open(){
+		rightServo.setPosition(600);
 		rightServo.enable();
-		rightServo.setPosition(2048);
-		Botball.msleep(500);
-		rightServo.disable();
 		
+		leftServo.setPosition(1800);
 		leftServo.enable();
-		leftServo.setPosition(2048);
-		Botball.msleep(500);
+		Botball.msleep(1500);
+		
 		leftServo.disable();
+		rightServo.disable();
 	}
 }

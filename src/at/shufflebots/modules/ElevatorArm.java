@@ -21,15 +21,15 @@ public class ElevatorArm {
 	}
 	
 	public void up() {
-		top.run(-100);
-		bottom.run(-100);
+		//top.run(-100);
+		//bottom.run(-100);
 		left.enable();
 		right.enable();
 		left.setPosition(1600);
 		right.setPosition(300);
-		Botball.msleep(4000);
-		top.off();
-		bottom.off();
+		Botball.msleep(3000);
+		//top.off();
+		//bottom.off();
 	}
 	
 	public void down() {

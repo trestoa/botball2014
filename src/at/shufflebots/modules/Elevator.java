@@ -19,16 +19,16 @@ public class Elevator {
 	}
 	
 	public void up() {
-		top.run(-100);
-		bottom.run(7);
+		top.run(100);
+		bottom.run(-5);
 		while(!this.topSensor.getValue());
 		top.off();
 		bottom.off();
 	}
 	
 	public void down() {
-		top.run(7);
-		bottom.run(-100);
+		top.run(-5);
+		bottom.run(100);
 		while(!this.bottomSensor.getValue());
 		top.off();
 		bottom.off();

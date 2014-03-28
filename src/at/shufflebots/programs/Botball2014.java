@@ -23,7 +23,6 @@ public class Botball2014 {
 		ElevatorArm arm = new ElevatorArm(0, 2, 0, 1);
 		Elevator elev = new Elevator(0, 1, 8, 9);
 		create.turn(-85, 50);
-		//Ausrichten am Game Table
 		create.driveDirect(-50, -50);
 		Botball.msleep(3000);
 		create.driveDirect(200, 200);
@@ -44,7 +43,8 @@ public class Botball2014 {
 		arm.up();
 		elev.up();
 		create.driveDirect(100, 100);
-		while(create.getRightFrontCliff() > 500 || create.getRightCliff() > 500) Botball.msleep(20);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		create.stop();
 	}
