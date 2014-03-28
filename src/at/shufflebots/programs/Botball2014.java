@@ -22,26 +22,38 @@ public class Botball2014 {
 		//Botball.waitForLight(0);
 		ElevatorArm arm = new ElevatorArm(0, 2, 0, 1);
 		Elevator elev = new Elevator(0, 1, 8, 9);
+		
+		//Position 1:Turning + adjusting Direction
 		create.turn(-85, 50);
 		create.driveDirect(-50, -50);
 		Botball.msleep(3000);
+		
+		//Driving Forward: Until the black tape
 		create.driveDirect(200, 200);
 		while(create.getLeftFrontCliff() > 500){
 			Botball.msleep(20);
 		}
 		create.driveDirect(-100, -100);
 		Botball.msleep(300);
+		
+		//Position 2: Turing + adjust Direction + Drive straightly to the center
 		create.turn(85, 50);
 		create.driveDirect(-100, -100);
 		Botball.msleep(5000);
 		create.driveDirect(200, 200);
 		Botball.msleep(5590);
+		
+		//Position3: Turning + adjust Direction
 		create.turn(-82, 50);
 		create.driveDirect(-130, -130);
 		Botball.msleep(5000);
 		create.stop();
+		
+		//Robot Arm up + elevator up
 		arm.up();
 		elev.up();
+		
+		//Driving Forward: Until the black tape*2 :
 		create.driveDirect(100, 100);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
