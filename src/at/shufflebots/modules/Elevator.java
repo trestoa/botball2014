@@ -20,14 +20,14 @@ public class Elevator {
 	
 	public void up() {
 		top.run(100);
-		bottom.run(-5);
+		bottom.run(0);
 		while(!this.topSensor.getValue());
 		top.off();
 		bottom.off();
 	}
 	
 	public void down() {
-		top.run(-5);
+		top.run(0);
 		bottom.run(100);
 		while(!this.bottomSensor.getValue());
 		top.off();
@@ -37,9 +37,9 @@ public class Elevator {
 	public void shortup() {
 		if(topSensor.getValue())
 			return;
-		top.run(-100);
-		bottom.run(7);
-		Botball.msleep(1350);
+		top.run(100);
+		bottom.run(10);
+		Botball.msleep(500);
 		top.off();
 		bottom.off();
 	}
@@ -47,9 +47,9 @@ public class Elevator {
 	public void shortdown() {
 		if(bottomSensor.getValue())
 			return;
-		top.run(7);
-		bottom.run(-100);
-		Botball.msleep(600);
+		top.run(10);
+		bottom.run(100);
+		Botball.msleep(1200);
 		top.off();
 		bottom.off();
 	}

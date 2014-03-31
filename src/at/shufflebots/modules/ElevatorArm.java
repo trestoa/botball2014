@@ -11,20 +11,23 @@ public class ElevatorArm {
 	private Motor top;
 	private Motor bottom;
 	
-	public ElevatorArm(int left_servo_port, int right_servo_port, int top_servo_port, int bottom_servo_port) {
+	public ElevatorArm(int left_servo_port, int right_servo_port, int top_motor_port, int bottom_motor_port) {
 		left = new Servo(left_servo_port);
 		right = new Servo(right_servo_port);
-		top = new Motor(top_servo_port);
-		bottom = new Motor(bottom_servo_port);
+		top = new Motor(top_motor_port);
+		bottom = new Motor(bottom_motor_port);
 		left.setPosition(700);
 		right.setPosition(1200);
 	}
 	
 	public void up() {
-		//top.run(-100);
-		//bottom.run(-100);
+		//top.run(100);
+		//bottom.run(100);
 		left.enable();
 		right.enable();
+		left.setPosition(1150);
+		right.setPosition(750);
+		Botball.msleep(1000);
 		left.setPosition(1600);
 		right.setPosition(300);
 		Botball.msleep(3000);
