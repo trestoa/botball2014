@@ -27,5 +27,6 @@ public class ShufflerArmTest {
 				sarm.toRight();
 			Botball.msleep(100);
 		}
+		sarm.stopAll();
 	}
 }

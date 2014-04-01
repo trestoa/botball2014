@@ -23,6 +23,8 @@ public class Elevator {
 		bottom.run(0);
 		while(!this.topSensor.getValue());
 		top.off();
+		bottom.run(20);
+		Botball.msleep(1000);
 		bottom.off();
 	}
 	
@@ -30,28 +32,34 @@ public class Elevator {
 		top.run(0);
 		bottom.run(100);
 		while(!this.bottomSensor.getValue());
-		top.off();
 		bottom.off();
+		top.run(20);
+		Botball.msleep(1000);
+		top.off();
 	}
 	
-	public void shortup() {
+	public void shortup(int time) {
 		if(topSensor.getValue())
 			return;
 		top.run(100);
-		bottom.run(10);
-		Botball.msleep(500);
+		bottom.run(0);
+		Botball.msleep(time);
 		top.off();
+		bottom.run(20);
+		Botball.msleep(1000);
 		bottom.off();
 	}
 	
-	public void shortdown() {
+	public void shortdown(int time) {
 		if(bottomSensor.getValue())
 			return;
-		top.run(10);
+		top.run(0);
 		bottom.run(100);
-		Botball.msleep(1200);
-		top.off();
+		Botball.msleep(time);
 		bottom.off();
+		top.run(20);
+		Botball.msleep(1000);
+		top.off();
 	}
 	
 	public void stopAll(){

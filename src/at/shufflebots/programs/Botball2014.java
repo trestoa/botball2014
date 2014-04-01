@@ -56,9 +56,9 @@ public class Botball2014 {
 		Botball.msleep(5590);
 		
 		//Position3: Turning + adjust Direction
-		create.turn(-85, 50);
+		create.turn(-87, 50);
 		create.driveDirect(-130, -130);
-		Botball.msleep(5000);
+		Botball.msleep(5900);
 		create.stop();
 		
 		//Robot Arm up + elevator up
@@ -70,15 +70,43 @@ public class Botball2014 {
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
-		Botball.msleep(700);
+		Botball.msleep(100);
 		create.stop();
 		
 		//Shuffler Hand moves:
 		Botball.msleep(500);
-		elev.shortdown();
+		elev.shortdown(1000);
 		Botball.msleep(500);
 		shuffler.toRight();
+		Botball.msleep(1000);
 		
+		//Comes Back and try to get another Right bottom Hanger 
+		create.driveDirect(-100,-100);
+		Botball.msleep(4000);
+		create.stop();
+		elev.down();
+		Botball.msleep(200);
+		shuffler.toMiddle();
+		Botball.msleep(200);
+		create.driveDirect(100,100);
+		Botball.msleep(4000);
+		create.stop();
+		
+		//Get the hanger:
+		shuffler.toLeft();
+		elev.shortup(1200);
+		create.driveDirect(-100,-100);
+		Botball.msleep(4000);
+		create.stop();
+		Botball.msleep(500);
+		elev.up();
+		shuffler.toRight();
+		Botball.msleep(500);
+		create.driveDirect(100,100);
+		Botball.msleep(4000);
+		create.stop();
+		elev.shortdown(1000);
+		Botball.msleep(500);
 		
 	}
 }

@@ -30,7 +30,7 @@ public class ElevatorArm {
 		Botball.msleep(1000);
 		left.setPosition(1600);
 		right.setPosition(300);
-		Botball.msleep(3000);
+		Botball.msleep(1500);
 		//top.off();
 		//bottom.off();
 	}
