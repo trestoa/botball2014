@@ -50,7 +50,7 @@ public class Botball2014 {
 		//Position 2: Turing + adjust Direction + Drive straightly to the center
 		create.turn(85, 50);
 		create.driveDirect(-100, -100);
-		Botball.msleep(8000); 								// NEED TO CHANGE TO 5000 !!!!!!!!!!!!!!!!
+		Botball.msleep(5000); 								
 		create.stop();
 		Botball.msleep(500);
 		create.driveDirect(200, 200);
@@ -66,18 +66,18 @@ public class Botball2014 {
 		shuffler.toLeft();
 		Botball.msleep(500);
 		arm.up();
-		Botball.msleep(500);
+		Botball.msleep(1000);
 		shuffler.toRight();
 		Botball.msleep(500);
 		elev.up();
-		Botball.msleep(500);
+		Botball.msleep(1000);
 		shuffler.toLeft();
-		Botball.msleep(500);
+		Botball.msleep(1000);
 		shuffler.littleRight();
 		Botball.msleep(500);
 		
 		//Driving Forward: Until the black tape*2 :
-		create.driveDirect(100, 100);
+		create.driveDirect(100, 95);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
@@ -86,7 +86,8 @@ public class Botball2014 {
 		
 		//Shuffler Hand moves:
 		Botball.msleep(500);
-		elev.shortdown(1000);
+		elev.shortdown(900);
+		Botball.msleep(1000);
 		shuffler.toRight();
 		Botball.msleep(500);
 		
@@ -96,7 +97,7 @@ public class Botball2014 {
 		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
 		
 		//Comes Back to the black line
-		create.driveDirect(-100,-100);
+		create.driveDirect(-95,-100);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
@@ -105,24 +106,28 @@ public class Botball2014 {
 		
 		//Setting the elevator position
 		elev.down();
-		Botball.msleep(200);
+		Botball.msleep(1000);
 		shuffler.toMiddle();
+		Botball.msleep(1000);
 		shuffler.littleLeft();
 		Botball.msleep(200);
 		
 		//Go to the Front again:
-		create.driveDirect(100,100);
+		create.driveDirect(100,95);
 		Botball.msleep(2200);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
-		Botball.msleep(400);
+		Botball.msleep(450);
 		create.stop();
 		
 		//Get the second hanger:
+		Botball.msleep(1000);
 		shuffler.toLeft();
-		elev.shortup(1200);
+		Botball.msleep(500);
+		elev.shortup(1250);
+		Botball.msleep(500);
 		
 		//Comes Back to the black line:
-		create.driveDirect(-100,-100);
+		create.driveDirect(-95,-100);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
@@ -131,20 +136,24 @@ public class Botball2014 {
 		
 		//elevator up:
 		elev.up();
-		Botball.msleep(200);
+		Botball.msleep(1000);
 		shuffler.toRight();
-		Botball.msleep(250);
+		Botball.msleep(500);
 		
 		//Go to Front again:
-		create.driveDirect(100,100);
+		create.driveDirect(100,95);
 		Botball.msleep(2200);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(350);
 		create.stop();
 		
 		//Drop the second hanger:
-		elev.shortdown(1000);
-		Botball.msleep(500);
+		elev.shortdown(550);
+		Botball.msleep(1000);
+		shuffler.toLeft();
+		Botball.msleep(1000);
+		elev.shortdown(450);
+		Botball.msleep(1000);
 		shuffler.toRight();
 		Botball.msleep(500);
 		
@@ -154,13 +163,15 @@ public class Botball2014 {
 		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
 		
 		//ending
-		create.driveDirect(-100,-100);
+		/*
+		create.driveDirect(-95,-100);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(2000);
 		create.stop();
 		elev.down();
 		shuffler.toMiddle();
+		*/
 		
 	}
 }
