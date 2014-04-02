@@ -22,19 +22,21 @@ public class Elevator {
 		top.run(100);
 		bottom.run(0);
 		while(!this.topSensor.getValue());
-		top.off();
-		bottom.run(20);
+		top.run(30);
+		bottom.run(10);
 		Botball.msleep(1000);
 		bottom.off();
+		top.off();
 	}
 	
 	public void down() {
 		top.run(0);
 		bottom.run(100);
 		while(!this.bottomSensor.getValue());
-		bottom.off();
-		top.run(20);
+		bottom.run(30);
+		top.run(10);
 		Botball.msleep(1000);
+		bottom.off();
 		top.off();
 	}
 	
@@ -45,7 +47,7 @@ public class Elevator {
 		bottom.run(0);
 		Botball.msleep(time);
 		top.off();
-		bottom.run(20);
+		bottom.run(10);
 		Botball.msleep(1000);
 		bottom.off();
 	}
@@ -57,7 +59,7 @@ public class Elevator {
 		bottom.run(100);
 		Botball.msleep(time);
 		bottom.off();
-		top.run(20);
+		top.run(10);
 		Botball.msleep(1000);
 		top.off();
 	}

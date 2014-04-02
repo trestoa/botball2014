@@ -30,15 +30,14 @@ public class Botball2014 {
 		
 		//Create Connetion + Gamestarts:
 		create.connect();
-			//Botball.waitForLight(0);
-		
-		//shuffler hand adjusting:
-		shuffler.toLeft();
+//Botball.waitForLight(0);
 		
 		//Position 1:Turning + adjusting Direction
 		create.turn(-85, 50);
 		create.driveDirect(-50, -50);
 		Botball.msleep(3000);
+		create.stop();
+		Botball.msleep(500);
 		
 		//Driving Forward: Until the black tape
 		create.driveDirect(200, 200);
@@ -51,62 +50,117 @@ public class Botball2014 {
 		//Position 2: Turing + adjust Direction + Drive straightly to the center
 		create.turn(85, 50);
 		create.driveDirect(-100, -100);
-		Botball.msleep(5000);
+		Botball.msleep(8000); 								// NEED TO CHANGE TO 5000 !!!!!!!!!!!!!!!!
+		create.stop();
+		Botball.msleep(500);
 		create.driveDirect(200, 200);
-		Botball.msleep(5590);
+		Botball.msleep(5550);
 		
 		//Position3: Turning + adjust Direction
-		create.turn(-87, 50);
+		create.turn(-82, 50);
 		create.driveDirect(-130, -130);
 		Botball.msleep(5900);
 		create.stop();
 		
 		//Robot Arm up + elevator up
+		shuffler.toLeft();
+		Botball.msleep(500);
 		arm.up();
+		Botball.msleep(500);
+		shuffler.toRight();
+		Botball.msleep(500);
 		elev.up();
+		Botball.msleep(500);
+		shuffler.toLeft();
+		Botball.msleep(500);
+		shuffler.littleRight();
+		Botball.msleep(500);
 		
 		//Driving Forward: Until the black tape*2 :
 		create.driveDirect(100, 100);
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
-		Botball.msleep(100);
+		Botball.msleep(350);
 		create.stop();
 		
 		//Shuffler Hand moves:
 		Botball.msleep(500);
 		elev.shortdown(1000);
-		Botball.msleep(500);
 		shuffler.toRight();
-		Botball.msleep(1000);
+		Botball.msleep(500);
 		
-		//Comes Back and try to get another Right bottom Hanger 
+		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
+		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
+		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
+		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
+		
+		//Comes Back to the black line
 		create.driveDirect(-100,-100);
-		Botball.msleep(4000);
+		Botball.msleep(1000);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(1000);
 		create.stop();
+		Botball.msleep(250);
+		
+		//Setting the elevator position
 		elev.down();
 		Botball.msleep(200);
 		shuffler.toMiddle();
+		shuffler.littleLeft();
 		Botball.msleep(200);
+		
+		//Go to the Front again:
 		create.driveDirect(100,100);
-		Botball.msleep(4000);
+		Botball.msleep(2200);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(400);
 		create.stop();
 		
-		//Get the hanger:
+		//Get the second hanger:
 		shuffler.toLeft();
 		elev.shortup(1200);
+		
+		//Comes Back to the black line:
 		create.driveDirect(-100,-100);
-		Botball.msleep(4000);
+		Botball.msleep(1000);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(1000);
 		create.stop();
-		Botball.msleep(500);
+		Botball.msleep(250);
+		
+		//elevator up:
 		elev.up();
+		Botball.msleep(200);
 		shuffler.toRight();
-		Botball.msleep(500);
+		Botball.msleep(250);
+		
+		//Go to Front again:
 		create.driveDirect(100,100);
-		Botball.msleep(4000);
+		Botball.msleep(2200);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(350);
 		create.stop();
+		
+		//Drop the second hanger:
 		elev.shortdown(1000);
 		Botball.msleep(500);
+		shuffler.toRight();
+		Botball.msleep(500);
+		
+		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
+		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
+		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
+		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
+		
+		//ending
+		create.driveDirect(-100,-100);
+		Botball.msleep(1000);
+		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		Botball.msleep(2000);
+		create.stop();
+		elev.down();
+		shuffler.toMiddle();
 		
 	}
 }
