@@ -17,8 +17,7 @@ public class ShufflerArm {
 	
 	public ShufflerArm(int motor_port) {
 		motor = new Motor(motor_port);
-		this.toRight();
-		this.toMiddle();
+		this.toLeft();
 	}
 	
 	public void toLeft() {
@@ -47,7 +46,7 @@ public class ShufflerArm {
 	
 	public void littleLeft(){
 		motor.run(-75);
-		Botball.msleep(600);
+		Botball.msleep(400);
 		motor.run(0);
 		motor.off();
 		POSITON = 0;
