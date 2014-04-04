@@ -47,7 +47,7 @@ public class ShufflerMain {
 		System.out.println("left");
 		arm.toLeft();
 		System.out.println("shortup");
-		elevator.shortup();
+		//elevator.shortup();
 		System.out.println("back");
 		create.driveDirect(100, 100);
 		Botball.msleep(2000);
@@ -61,7 +61,7 @@ public class ShufflerMain {
 		create.stop();
 
 		System.out.println("shortdown");
-		elevator.shortdown();
+		//elevator.shortdown();
 		System.out.println("right");
 		arm.toRight();
 		

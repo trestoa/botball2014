@@ -23,7 +23,8 @@ public class ShufflerArm {
 	public void toLeft() {
 		motor.run(-75);
 		Botball.msleep(2000);
-		motor.run(0);
+		motor.run(10);
+		Botball.msleep(500);
 		motor.off();
 		POSITON = 1;
 	}
@@ -39,7 +40,8 @@ public class ShufflerArm {
 	public void toRight() {
 		motor.run(75);
 		Botball.msleep(2000);
-		motor.run(0);
+		motor.run(-10);
+		Botball.msleep(500);
 		motor.off();
 		POSITON = -1;
 	}
@@ -47,17 +49,15 @@ public class ShufflerArm {
 	public void littleLeft(){
 		motor.run(-75);
 		Botball.msleep(400);
-		motor.run(0);
 		motor.off();
-		POSITON = 0;
+		POSITON += 1;
 	}
 	
 	public void littleRight(){
 		motor.run(75);
 		Botball.msleep(800);
-		motor.run(0);
 		motor.off();
-		POSITON = 0;
+		POSITON -= 1;
 	}
 	
 	

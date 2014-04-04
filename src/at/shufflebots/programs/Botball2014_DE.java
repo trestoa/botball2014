@@ -7,12 +7,12 @@ import at.shufflebots.modules.ShufflerArm;
 import linkjvm.Botball;
 import linkjvm.create.Create;
 
-public class Botball2014 {
+public class Botball2014_DE {
 
 	public static void main(String[] args) {
 		
 		//Checklists:
-		/*
+		
 		new CheckList<String>("Connect Create",
 				"Connect Light on Port 0",
 				"Connect left Servo on Port 0",
@@ -22,7 +22,7 @@ public class Botball2014 {
 				"Connect top sensor on Port 8",
 				"Connect bottom sensor on Port 9",
 				"Connect shuffler Motor on Port 3").performChecks();
-		*/
+		
 		
 		//Definitions:
 		Create create = new Create();
@@ -59,20 +59,23 @@ public class Botball2014 {
 		//Position3: Turning + adjust Direction
 		create.turn(-82,100);
 		create.driveDirect(-200, -200);
-		shuffler.toRight();
-		Botball.msleep(1000);
+		Botball.msleep(2000);
+		create.driveDirect(-100, -100);
+		Botball.msleep(1500);
 		create.stop();
 		arm.up();
+		shuffler.toRight();
 		elev.up();
 
 		
 		//Driving Forward: Until the black tape*2 :
 		create.driveDirect(100,95);
 		shuffler.toLeft();
+		shuffler.littleRight();
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
-		Botball.msleep(350);
+		Botball.msleep(300);
 		create.stop();
 		
 		//Shuffler Hand moves:
@@ -87,7 +90,7 @@ public class Botball2014 {
 		//Comes Back to the black line
 		create.driveDirect(-100,-100);
 		Botball.msleep(1000);
-		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500){
+		while(create.getRightCliff() > 500){
 			Botball.msleep(20);
 		}
 		Botball.msleep(500);
@@ -95,52 +98,54 @@ public class Botball2014 {
 		elev.down();
 		////////////////////////////////////////////////////////////////////////////////////////
 		//Go to the Front again:
-		create.driveDirect(100,100);
+		create.driveDirect(70,70);
 		shuffler.toMiddle();
 		shuffler.littleLeft();
 		Botball.msleep(500);
-		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		Botball.msleep(325);
 		create.stop();
 		
 		//Get the second hanger:
 		elev.shortdown(500);
 		shuffler.toRight();
-		elev.shortup(1200);
+		elev.shortup(1300);
 		
 		//Comes Back to the black line:
 		create.driveDirect(-100,-100);
 		shuffler.toRight();
-		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		while(create.getRightCliff() > 500) Botball.msleep(20);
 		Botball.msleep(500);
 		create.stop();
 		elev.up();
 
 		//Go to Front again:
-		create.driveDirect(100,100);
+		create.driveDirect(70,70);
 		Botball.msleep(1000);
 		elev.shortup(500);
-		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		Botball.msleep(350);
 		create.stop();
 		
 		
 		//Drop the second hanger:
-		elev.shortdown(1200);
+		elev.shortdown(1000);
 		shuffler.toMiddle();
+		create.disconnect();
 		
 		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
 		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
 		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
 		/*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*//*150 points!!!!!!!!!!!!!!!!*/
 		
-		create.driveDirect(-100,-100);
+		/*create.driveDirect(-100,-100);
 		Botball.msleep(1500);
 		create.turn(3, 50);
 		create.driveDirect(-200,-200);
 		Botball.msleep(5000);
 		create.stop();
 		elev.down();
-		
+		arm.disable();
+		System.out.println("finish");*/
 	}
 }
