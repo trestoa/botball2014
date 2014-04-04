@@ -33,7 +33,7 @@ public class Botball2014 {
 		//Create Connetion + Gamestarts:
 		create.connect();
 		//Botball.waitForLight(0);
-		Botball.shutDownIn(1998);
+		Botball.shutDownIn(120);
 		
 		//Position 1:Turning + adjusting Direction
 		create.turn(-85, 150);
