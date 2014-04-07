@@ -79,7 +79,7 @@ public class Botball2014_DE {
 		create.stop();
 		
 		//Shuffler Hand moves:
-		elev.shortdown(1000);
+		elev.shortdown(1100);
 		shuffler.toRight();
 		
 		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
@@ -103,7 +103,7 @@ public class Botball2014_DE {
 		shuffler.littleLeft();
 		Botball.msleep(500);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
-		Botball.msleep(325);
+		Botball.msleep(350);
 		create.stop();
 		
 		//Get the second hanger:
@@ -124,12 +124,12 @@ public class Botball2014_DE {
 		Botball.msleep(1000);
 		elev.shortup(500);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
-		Botball.msleep(350);
+		Botball.msleep(325);
 		create.stop();
 		
 		
 		//Drop the second hanger:
-		elev.shortdown(1000);
+		elev.shortdown(1100);
 		shuffler.toMiddle();
 		create.disconnect();
 		
