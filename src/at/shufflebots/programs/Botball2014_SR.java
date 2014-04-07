@@ -10,6 +10,8 @@ import at.shufflebots.modules.ShufflerArm;
 
 public class Botball2014_SR {
 
+	public static final int Goforward = 225;
+	
 	public static void main(String[] args) {
 		
 		Thread t = new Thread(new Runnable() {
@@ -79,7 +81,6 @@ public class Botball2014_SR {
 		create.stop();
 		arm.up();
 		elev.up();
-		elev.shortdown(100);
 
 		// Driving Forward: Until the black tape*2 :
 		create.driveDirect(100, 95);
@@ -87,14 +88,16 @@ public class Botball2014_SR {
 				&& create.getRightCliff() > 500)
 			Botball.msleep(20);
 		Botball.msleep(1000);
+		create.driveDirect(70, 70);
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(180);
+		Botball.msleep(Goforward);
 		create.stop();
+		Botball.msleep(500);
 
 
 		// Shuffler Hand moves:
-		elev.shortdown(1000);
+		elev.shortdown(1050);
 		shuffler.toLeft();
 
 		/////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,20 +113,20 @@ public class Botball2014_SR {
 		}
 		Botball.msleep(500);
 		create.stop();
-		shuffler.toMiddle();
 		elev.down();
+		shuffler.toMiddle();
 	
 		// Go to the Front again:
 		create.driveDirect(70, 70);
-		Botball.msleep(500);
+		Botball.msleep(1000);
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(350);
+		Botball.msleep(Goforward);
 		create.stop();
 		
 		//get the Second Hanger:
 		shuffler.toRight();
-		elev.shortup(1100);
+		elev.shortup(1300);
 		
 		// Comes Back to the black line:
 		create.driveDirect(-100, -100);
@@ -133,18 +136,19 @@ public class Botball2014_SR {
 		Botball.msleep(500);
 		create.stop();
 		elev.up();
+		elev.shortdown(200);
 		shuffler.toLeft();
 		
 		
 		// Go to Front again:
-		create.driveDirect(100, 95);
+		create.driveDirect(70, 70);
 		while (create.getRightFrontCliff() > 500
 				&& create.getRightCliff() > 500)
 			Botball.msleep(20);
 		Botball.msleep(1000);
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(200);
+		Botball.msleep(Goforward);
 		create.stop();
 		
 		//Adjusting hangers:
@@ -157,8 +161,6 @@ public class Botball2014_SR {
 		////////////////////////////////////////////////////////////////////////////////////////////
 		// 150 points 150 points 150 points 150 points 150 points 150 points 150 points 150 points//
 		////////////////////////////////////////////////////////////////////////////////////////////
-		/*
-		shuffler.toLeft();
 		
 		// Comes Back to the black line:
 		create.driveDirect(-100, -100);
@@ -174,7 +176,7 @@ public class Botball2014_SR {
 		Botball.msleep(1000);
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(325);
+		Botball.msleep(Goforward);
 		create.stop();
 
 		//Get the Third Hanger
@@ -196,17 +198,17 @@ public class Botball2014_SR {
 		elev.shortdown(1500);
 		
 		//Goto Front again:
-		create.driveDirect(100, 95);
+		create.driveDirect(70, 70);
 		Botball.msleep(500);
 		while (create.getRightFrontCliff() > 500)
 				Botball.msleep(20);
-		Botball.msleep(600);
+		Botball.msleep(Goforward*2);
 		create.stop();
 				
 		elev.up();
 			
 		create.driveDirect(-70, -70);
-		Botball.msleep(800);
+		Botball.msleep((int)(Goforward*2.5));
 		create.stop();			
 		elev.shortdown(1100);
 		
