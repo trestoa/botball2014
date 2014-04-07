@@ -166,14 +166,13 @@ public class Botball2014_SR {
 		create.driveDirect(-100, -100);
 		while (create.getRightCliff() > 500)
 			Botball.msleep(20);
-		shuffler.toRight();
 		Botball.msleep(500);
 		create.stop();
 		elev.down();
 		
 		// Go to Front again:
 		create.driveDirect(70, 70);
-		Botball.msleep(1000);
+		shuffler.toLeft();
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
 		Botball.msleep(Goforward);
