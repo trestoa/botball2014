@@ -121,7 +121,7 @@ public class Botball2014_SR {
 		Botball.msleep(1000);
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(Goforward);
+		Botball.msleep(Goforward+250);
 		create.stop();
 		
 		//get the Second Hanger:
@@ -172,10 +172,10 @@ public class Botball2014_SR {
 		
 		// Go to Front again:
 		create.driveDirect(70, 70);
-		shuffler.toLeft();
+		shuffler.toMiddle();
 		while (create.getRightFrontCliff() > 500)
 			Botball.msleep(20);
-		Botball.msleep(Goforward);
+		Botball.msleep(Goforward + 250);
 		create.stop();
 
 		//Get the Third Hanger
