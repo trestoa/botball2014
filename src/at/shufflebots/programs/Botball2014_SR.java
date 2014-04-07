@@ -35,6 +35,7 @@ public class Botball2014_SR {
 				"Connect bottom sensor on Port 9",
 				"Connect shuffler Motor on Port 3").performChecks();
 		*/
+		
 		// Definitions:
 		Create create = new Create();
 		ElevatorArm arm = new ElevatorArm(0, 2, 0, 1);
