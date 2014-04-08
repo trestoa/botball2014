@@ -31,9 +31,6 @@ public class Nr2_SR {
 		
 		new CheckList<String>("Greifarm fixieren").performChecks();
 		
-		waitForLight(2);
-		shutDownIn(117);
-
 		final Motor left = new Motor(3);
 		final Motor right = new Motor(2);
 		
@@ -42,7 +39,12 @@ public class Nr2_SR {
 		
 		final Servo grabbler = new Servo(0);
 		
-		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// GAME START // GAME START // GAME START // GAME START // GAME START // GAME START // GAME START // 
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		waitForLight(2);
+		shutDownIn(117);
 		
 		grabbler.setPosition(0);
 		grabbler.enable();

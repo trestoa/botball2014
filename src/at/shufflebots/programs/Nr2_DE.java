@@ -43,10 +43,12 @@ public class Nr2_DE {
 		
 		new CheckList<String>("Greifarm fixieren").performChecks();
 		
-//		waitForLight(2);
-		shutDownIn(117);
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// GAME START // GAME START // GAME START // GAME START // GAME START // GAME START // GAME START // 
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		//
+		waitForLight(2);
+		shutDownIn(117);
 		
 		grabbler.setPosition(0);
 		grabbler.enable();
