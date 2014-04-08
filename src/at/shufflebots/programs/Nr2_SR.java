@@ -1,20 +1,35 @@
 package at.shufflebots.programs;
 
+import static linkjvm.Botball.msleep;
+import linkjvm.Botball;
 import linkjvm.motors.Motor;
 import linkjvm.motors.Servo;
 import linkjvm.sensors.analog.AnalogSensor;
-import linkjvm.sensors.buttons.AButton;
-import static linkjvm.Botball.*;
+import linkjvm.sensors.buttons.SideButton;
+import at.shufflebots.modules.CheckList;
 
 public class Nr2_SR {
 	
 	static int thresholdBottom = 700; //higher when black
 	static int thresholdFront = 500; //lower when in front of the cube
 	
-	static int motorspeedLeft = 80;
-	static int motorspeedRight = 85;
+	static int motorspeedLeft = 100;
+	static int motorspeedRight = 100;
 	
 	public static void main(String[] args) {
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+
+				SideButton b = new SideButton();
+				while(!b.isPressed())Botball.msleep(20);
+				System.exit(0);
+			}
+		}).start();
+		
+		new CheckList<String>("Greifarm fixieren").performChecks();
 
 		final Motor left = new Motor(3);
 		final Motor right = new Motor(2);
@@ -23,26 +38,6 @@ public class Nr2_SR {
 		AnalogSensor front = new AnalogSensor(1);
 		
 		final Servo grabbler = new Servo(0);
-		
-		final AButton button = new AButton();
-		button.setText("Stop");
-	
-		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-
-				while(true) {
-					if(button.isPressed()) {
-						System.out.println("stop");
-						left.off();
-						right.off();
-						grabbler.disable();
-						System.exit(0);
-					}
-				}
-			}
-		}).start();
 		
 		//
 		
