@@ -1,16 +1,16 @@
 package at.shufflebots.programs;
 
+import linkjvm.Botball;
+import linkjvm.create.Create;
+import linkjvm.sensors.buttons.SideButton;
 import at.shufflebots.modules.CheckList;
 import at.shufflebots.modules.Elevator;
 import at.shufflebots.modules.ElevatorArm;
 import at.shufflebots.modules.ShufflerArm;
-import linkjvm.Botball;
-import linkjvm.create.Create;
-import linkjvm.sensors.buttons.SideButton;
 
-public class Botball2014_DE {
+public class Botball2013_SR_GT1 {
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 		Thread t = new Thread(new Runnable() {
 			
@@ -39,6 +39,7 @@ public class Botball2014_DE {
 		
 		
 		Botball.waitForLight(0);
+		Botball.shutDownIn(117);
 		
 		//Definitions:
 		Create create = new Create();
@@ -52,7 +53,7 @@ public class Botball2014_DE {
 		Botball.shutDownIn(120);
 		
 		//Position 1:Turning + adjusting Direction
-		create.turn(-90, 150);
+		create.turn(-85, 150);
 		create.driveDirect(-200, -200);
 		Botball.msleep(800);
 		create.stop();
@@ -70,7 +71,7 @@ public class Botball2014_DE {
 		create.driveDirect(-200, -200);
 		Botball.msleep(2000); 								
 		create.driveDirect(300,300);
-		Botball.msleep(3650);
+		Botball.msleep(3680);
 		
 		//Position3: Turning + adjust Direction
 		create.turn(-82,100);
@@ -85,10 +86,11 @@ public class Botball2014_DE {
 
 		
 		//Driving Forward: Until the black tape*2 :
-		create.driveDirect(100,95);
+		create.driveDirect(100,100);
 		shuffler.toLeft();
 		shuffler.littleRight();
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		create.driveDirect(70,70);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		Botball.msleep(300);
