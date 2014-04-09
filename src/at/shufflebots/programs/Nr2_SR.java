@@ -59,7 +59,7 @@ public class Nr2_SR {
 		//Turn left
 		
 		left.run(-1 * motorspeedLeft);
-		msleep(800);
+		msleep(850);
 		
 		left.run(motorspeedLeft);
 		
@@ -76,14 +76,14 @@ public class Nr2_SR {
 		//turn left
 
 		left.freeze();
-		msleep(700);
+		msleep(1300);
 
 		//Drive to the end
 		
 		right.run(motorspeedRight);
 		left.run(motorspeedLeft);
 		
-		msleep(5000);
+		msleep(6000);
 		
 		left.freeze();
 		right.freeze();
