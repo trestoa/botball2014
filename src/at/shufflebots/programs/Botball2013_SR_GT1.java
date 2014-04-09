@@ -71,10 +71,10 @@ public static void main(String[] args) {
 		create.driveDirect(-200, -200);
 		Botball.msleep(2000); 								
 		create.driveDirect(300,300);
-		Botball.msleep(3680);
+		Botball.msleep(3650);
 		
 		//Position3: Turning + adjust Direction
-		create.turn(-82,100);
+		create.turn(-83,100);
 		create.driveDirect(-200, -200);
 		Botball.msleep(2000);
 		create.driveDirect(-100, -100);
@@ -90,6 +90,10 @@ public static void main(String[] args) {
 		shuffler.toLeft();
 		shuffler.littleRight();
 		while(create.getRightFrontCliff() > 500 && create.getRightCliff() > 500) Botball.msleep(20);
+		boolean isCentered = false;
+		if(create.getRightFrontCliff() > 500){
+			isCentered = true;
+		}
 		create.driveDirect(70,70);
 		Botball.msleep(1000);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
@@ -97,7 +101,7 @@ public static void main(String[] args) {
 		create.stop();
 		
 		//Shuffler Hand moves:
-		elev.shortdown(1100);
+		elev.shortdown(1000);
 		shuffler.toRight();
 		
 		/*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*//*75 points!!!!!!!!!!!!!!!!*/
@@ -117,8 +121,11 @@ public static void main(String[] args) {
 		////////////////////////////////////////////////////////////////////////////////////////
 		//Go to the Front again:
 		create.driveDirect(70,70);
-		shuffler.toMiddle();
-		shuffler.littleLeft();
+		if(isCentered){
+			shuffler.toMiddle();
+		} else {
+			shuffler.toLeft();
+		}
 		Botball.msleep(500);
 		while(create.getRightFrontCliff() > 500) Botball.msleep(20);
 		Botball.msleep(350);
@@ -147,7 +154,7 @@ public static void main(String[] args) {
 		
 		
 		//Drop the second hanger:
-		elev.shortdown(1100);
+		elev.shortdown(1000);
 		shuffler.toMiddle();
 		create.disconnect();
 		
