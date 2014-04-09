@@ -143,6 +143,7 @@ public static void main(String[] args) {
 		Botball.msleep(500);
 		create.stop();
 		elev.up();
+		shuffler.littleLeft();
 
 		//Go to Front again:
 		create.driveDirect(70,70);

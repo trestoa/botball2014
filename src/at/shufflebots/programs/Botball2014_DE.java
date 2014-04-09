@@ -5,25 +5,12 @@ import at.shufflebots.modules.Elevator;
 import at.shufflebots.modules.ElevatorArm;
 import at.shufflebots.modules.ShufflerArm;
 import linkjvm.Botball;
+import linkjvm.ardrone.ARDrone;
 import linkjvm.create.Create;
-import linkjvm.sensors.buttons.SideButton;
 
 public class Botball2014_DE {
 
 	public static void main(String[] args) {
-		
-		Thread t = new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				SideButton b = new SideButton();
-				while(!b.isPressed()) Botball.msleep(20);
-				System.exit(0);
-			}
-		});
-		t.setDaemon(true);
-		t.start();
-		
 		
 		//Checklists:
 		
@@ -38,8 +25,6 @@ public class Botball2014_DE {
 				"Connect shuffler Motor on Port 3").performChecks();
 		
 		
-		Botball.waitForLight(0);
-		
 		//Definitions:
 		Create create = new Create();
 		ElevatorArm arm = new ElevatorArm(0, 2, 0, 1);
@@ -52,7 +37,7 @@ public class Botball2014_DE {
 		Botball.shutDownIn(120);
 		
 		//Position 1:Turning + adjusting Direction
-		create.turn(-90, 150);
+		create.turn(-85, 150);
 		create.driveDirect(-200, -200);
 		Botball.msleep(800);
 		create.stop();
