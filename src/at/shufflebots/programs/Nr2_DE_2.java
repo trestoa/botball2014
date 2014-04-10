@@ -1,17 +1,17 @@
 package at.shufflebots.programs;
 
+import at.shufflebots.modules.CheckList;
 import linkjvm.Botball;
 import linkjvm.motors.Motor;
 import linkjvm.motors.Servo;
 import linkjvm.sensors.analog.AnalogSensor;
 import linkjvm.sensors.buttons.SideButton;
-import at.shufflebots.modules.CheckList;
 
-public class Nr2_DE {
+public class Nr2_DE_2 {
 	
 	static int thresholdBottom = 700; //higher when black
 	static int thresholdFront = 800; //lower when in front of the cube
-	
+
 	public static void main(String[] args) {
 		
 		new Thread(new Runnable() {
@@ -29,7 +29,7 @@ public class Nr2_DE {
 		
 		//Botball.waitForLight(0);
 		Botball.shutDownIn(117);
-
+		
 		final Motor left = new Motor(3);
 		final Motor right = new Motor(2);
 		
@@ -40,7 +40,7 @@ public class Nr2_DE {
 		
 		//
 		
-		grabbler.setPosition(0);
+		grabbler.setPosition(1100);
 		grabbler.enable();
 		
 		left.run(90);
@@ -53,23 +53,21 @@ public class Nr2_DE {
 		//Turn left
 		
 		left.run(-100);
-		Botball.msleep(550);
+		Botball.msleep(500);
 		
 		left.run(90);
 		
 		//Drive to cube
 				
-		Botball.msleep(3000);
+		Botball.msleep(1500);
 		//left.run(-90);
 		//right.run(-100);
-		
-		grabbler.setPosition(900);
 		
 		
 		//turn right
 		right.run(-100);
 		left.run(90);
-		Botball.msleep(750);
+		Botball.msleep(500);
 		
 		
 		right.run(100);
@@ -78,29 +76,42 @@ public class Nr2_DE {
 		left.run(90);
 		msleep(3000);*/
 		
+		grabbler.setPosition(0);
+		
+		Botball.msleep(1000);
+		
+		left.off();
+		right.off();
+		
+		Botball.msleep(200);
+		
+		grabbler.setPosition(1100);
+		
+		Botball.msleep(200);
+		
+		left.run(-90);
+		right.run(-100);
+		
+		Botball.msleep(1000);
+		
+		right.run(100);
+		
+		Botball.msleep(500);
+		
+		left.run(90);
+		
 		Botball.msleep(4000);
+		
+		left.run(-90);
+		
+		Botball.msleep(500);
+		
+		left.run(90);
+		
+		Botball.msleep(2000);
 		
 		left.off();
 		right.off();
 		System.exit(0);
-		
-		
-		Botball.msleep(2000);
-		
-		//turn left
-
-		left.freeze();
-		Botball.msleep(800);
-
-		//Drive to the end
-		
-		right.run(100);
-		left.run(100);
-		
-		Botball.msleep(5000);
-		
-		left.freeze();
-		right.freeze();
-		grabbler.disable();
-	}	
+	}
 }
