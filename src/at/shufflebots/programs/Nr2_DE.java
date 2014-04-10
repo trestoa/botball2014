@@ -28,14 +28,14 @@ public class Nr2_DE {
 		
 		new CheckList<String>("Greifarm fixieren").performChecks();
 		
-		//waitForLight(2);
+		waitForLight(0);
 		shutDownIn(117);
 
 		final Motor left = new Motor(3);
 		final Motor right = new Motor(2);
 		
-		AnalogSensor bottom = new AnalogSensor(0);
-		AnalogSensor front = new AnalogSensor(1);
+		AnalogSensor bottom = new AnalogSensor(1);
+//		AnalogSensor front = new AnalogSensor(1);
 		
 		final Servo grabbler = new Servo(0);
 		
@@ -48,8 +48,6 @@ public class Nr2_DE {
 		right.run(100);
 	
 		//Drive to black line
-		
-		grabbler.setPosition(1200);
 		
 		while(bottom.getValue10() < thresholdBottom) msleep(10);
 		
@@ -66,18 +64,23 @@ public class Nr2_DE {
 		//left.run(-90);
 		//right.run(-100);
 		
+		grabbler.setPosition(900);
+		
 		right.run(-100);
 		left.run(90);
 		msleep(900);
 		
 		
+		right.run(100);
+		
 		/*right.run(100);
 		left.run(90);
 		msleep(3000);*/
 		
+		msleep(5000);
 		
-		right.freeze();
-		left.freeze();
+		left.off();
+		right.off();
 		System.exit(0);
 		
 		
