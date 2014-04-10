@@ -27,7 +27,7 @@ public class Nr2_DE_2 {
 		
 		new CheckList<String>("Greifarm fixieren").performChecks();
 		
-		//Botball.waitForLight(0);
+		Botball.waitForLight(0);
 		Botball.shutDownIn(117);
 		
 		final Motor left = new Motor(3);
